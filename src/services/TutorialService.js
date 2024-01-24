@@ -1,41 +1,33 @@
 import http from "../http-common";
 
-const getAll = () => {
-  return http.get("/tutorials");
-};
+class TutorialDataService {
+  getAll() {
+    return http.get("https://lvz-web-development-bezkoder-tutorial-app.onrender.com/api/tutorials");
+  }
 
-const get = id => {
-  return http.get(`/tutorials/${id}`);
-};
+  get(id) {
+    return http.get(`https://lvz-web-development-bezkoder-tutorial-app.onrender.com/api/tutorials/${id}`);
+  }
 
-const create = data => {
-  return http.post("/tutorials", data);
-};
+  create(data) {
+    return http.post("https://lvz-web-development-bezkoder-tutorial-app.onrender.com/api/tutorials", data);
+  }
 
-const update = (id, data) => {
-  return http.put(`/tutorials/${id}`, data);
-};
+  update(id, data) {
+    return http.put(`https://lvz-web-development-bezkoder-tutorial-app.onrender.com/api/tutorials/${id}`, data);
+  }
 
-const remove = id => {
-  return http.delete(`/tutorials/${id}`);
-};
+  delete(id) {
+    return http.delete(`https://lvz-web-development-bezkoder-tutorial-app.onrender.com/api/tutorials/${id}`);
+  }
 
-const removeAll = () => {
-  return http.delete(`/tutorials`);
-};
+  deleteAll() {
+    return http.delete(`https://lvz-web-development-bezkoder-tutorial-app.onrender.com/api/tutorials`);
+  }
 
-const findByTitle = title => {
-  return http.get(`/tutorials?title=${title}`);
-};
+  findByTitle(title) {
+    return http.get(`https://lvz-web-development-bezkoder-tutorial-app.onrender.com/api/tutorials?title=${title}`);
+  }
+}
 
-const TutorialService = {
-  getAll,
-  get,
-  create,
-  update,
-  remove,
-  removeAll,
-  findByTitle
-};
-
-export default TutorialService;
+export default new TutorialDataService();
