@@ -48,7 +48,7 @@ const AddTutorial = () => {
       {submitted ? (
         <div>
           <h4>You submitted successfully!</h4>
-          <button className="btn btn-success" onClick={newTutorial}>
+          <button className="btn btn-success" onClick={this.newTutorial}>
             Add
           </button>
         </div>
@@ -62,7 +62,7 @@ const AddTutorial = () => {
               id="title"
               required
               value={tutorial.title}
-              onChange={handleInputChange}
+              onChange={this.handleInputChange}
               name="title"
             />
           </div>
@@ -80,7 +80,7 @@ const AddTutorial = () => {
             />
           </div>
 
-          <button onClick={saveTutorial} className="btn btn-success">
+          <button onClick={this.saveTutorial} className="btn btn-success">
             Submit
           </button>
         </div>
